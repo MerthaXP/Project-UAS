@@ -1,0 +1,453 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f0e3;
+    color: #333;
+    scroll-behavior: smooth; 
+}
+
+header {
+    background-color: #4a2c2a;
+    color: #f0c674;
+    text-align: center;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #f0c674;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 50px 20px;
+    min-height: 100vh;
+}
+
+#home, #products, #detail, #about {
+    text-align: center;
+}
+
+footer {
+    background-color: #4a2c2a;
+    color: #f0c674;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; 
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* Style untuk section produk */
+#products {
+    position: relative;
+    background-image: url('Images/antique-cafe-bg-03.jpg'); /* Ganti dengan gambar yang diinginkan */
+    background-size: cover;  /* Menyesuaikan ukuran gambar */
+    background-position: center;  /* Pusatkan gambar */
+    background-attachment: fixed;  /* Tetap di tempat saat scroll */
+    color: #f0c674;
+    padding: 100px 20px;  /* Ruang atas dan bawah */
+    min-height: 100vh;  /* Full tinggi layar */
+}
+
+/* Overlay untuk teks agar terbaca lebih jelas */
+#products::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0); /* Overlay transparan */
+    z-index: 1;  /* Letakkan di belakang teks */
+}
+
+
+
+
+
+
+
+
+/* Styling for Home Section */
+#home {
+    
+    color: #f0c674; /* Warna teks terang untuk keterbacaan */
+    padding: 100px 20px; /* Memberikan ruang vertikal dan horizontal */
+    text-align: center; /* Teks di tengah */
+    position: relative; /* Untuk memastikan penempatan konten kotak dengan baik */
+}
+
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('Images/antique-cafe-bg-01.jpg'); /* Gantilah dengan path gambar yang sesuai */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Agar gambar bergerak dengan scroll */
+    z-index: -1; /* Pastikan gambar berada di belakang konten */
+    transform: translateZ(0); /* Memastikan gambar bergerak dengan scroll */
+    will-change: transform; /* Menandakan gambar akan bergerak */
+}
+
+
+/* Styling for Home Title */
+#home h2 {
+    font-size: 3.5em; /* Ukuran font yang lebih besar */
+    margin-bottom: 0px;
+    color: #f0c674; /* Warna teks terang agar kontras */
+    font-family: 'Arial', sans-serif; /* Gaya font yang lebih bersih */
+    font-weight: bold;
+}
+
+#home h5 {
+    font-size: 1.5em; /* Ukuran font yang lebih besar */
+    margin-bottom: 20px;
+    color: #f0c674; /* Warna teks terang agar kontras */
+    font-family: 'Arial', sans-serif; /* Gaya font yang lebih bersih */
+    font-weight: bold;
+}
+
+/* Styling for Home Paragraph */
+#home p {
+    font-size: 1.5em; /* Ukuran teks yang nyaman dibaca */
+    max-width: 800px; /* Lebar maksimum agar teks tidak terlalu lebar */
+    margin: 0 auto; /* Menjaga agar teks tetap di tengah */
+    line-height: 1.8; /* Jarak antar baris agar teks lebih mudah dibaca */
+    padding: 20px; /* Memberikan ruang dalam kotak */
+    background-color: #4a2c2a; /* Latar belakang kotak dengan transparansi */
+    border-radius: 12px; /* Sudut kotak yang melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan halus di sekitar kotak */
+    color: #ffffff; /* Warna teks dalam kotak */
+    text-align: justify;
+}
+
+/* Tombol Call to Action (CTA) */
+#home .cta-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #f0c674; /* Warna tombol */
+    color: #4a2c2a; /* Warna teks tombol */
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#home .cta-button:hover {
+    background-color: #e0b565; /* Warna tombol saat hover */
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.product-item {
+    margin: 20px 0;
+    padding: 20px;
+    position: relative; /* Membuat kotak produk menjadi konteks posisi */
+    border-radius: 8px; /* Membuat sudut melengkung */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.0); /* Menambahkan bayangan untuk efek kedalaman */
+    overflow: hidden; /* Memastikan gambar latar tidak keluar dari kotak */
+    color: #333; /* Warna teks utama */
+    background-color: rgba(255, 255, 255, 0.0); /* Memberikan latar semi-transparan pada konten */
+}
+
+.product-item::before {
+    content: ""; /* Elemen kosong untuk gambar latar */
+    position: absolute; /* Menempatkan gambar di belakang konten */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Images/antique-cafe-bg-04.jpg'); /* Ganti dengan path gambar kamu */
+    background-size: cover; /* Gambar memenuhi area */
+    background-position: center; /* Gambar berpusat */
+    background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+    z-index: -1; /* Menempatkan gambar di belakang konten */
+    opacity: 0.4; /* Transparansi gambar agar tidak terlalu mencolok */
+}
+
+.product-item h4 {
+    font-size: 2em;
+    color: #4a2c2a; /* Warna gelap untuk nama produk */
+    margin-bottom: 10px;
+}
+
+.product-item p {
+    font-size: 1.3em; /* Ukuran font lebih besar untuk keterbacaan */
+    font-family: 'Georgia', serif; /* Menggunakan font serif yang elegan */
+    color: #4a2c2a; /* Warna cokelat untuk kesan hangat */
+    line-height: 1.8; /* Spasi antar baris yang nyaman */
+    background-color: rgba(240, 200, 150, 0.2); /* Latar belakang semi-transparan */
+    padding: 10px 15px; /* Memberikan ruang di sekitar teks */
+    border-left: 5px solid #ffd700; /* Garis vertikal sebagai penanda */
+    border-radius: 5px; /* Membuat sudut kotak melengkung */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan ringan untuk kesan kedalaman */
+}
+
+.product-item p strong {
+    font-weight: bold; /* Menekankan teks yang penting */
+    color: #8b4513; /* Warna cokelat gelap untuk kontras */
+    text-transform: capitalize; /* Membuat huruf pertama setiap kata besar */
+}
+
+
+.product-item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0); /* Bayangan untuk gambar produk */
+}
+
+
+
+
+#about {
+    background-color: #f8f0e3; /* Warna latar hangat */
+    color: #4a2c2a; /* Warna teks utama */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #8b4513; /* Warna lebih gelap untuk judul */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Memberikan jarak antar huruf */
+}
+
+#about p {
+    font-size: 1.2em;
+    line-height: 1.8; /* Spasi antar baris untuk keterbacaan */
+    margin: 10px auto;
+    max-width: 800px; /* Membatasi lebar teks agar tidak terlalu lebar */
+    color: #4a2c2a;
+}
+
+#about p:first-of-type {
+    font-weight: bold; /* Membuat paragraf pertama lebih menonjol */
+    font-size: 1.3em;
+}
+
+#about .highlight {
+    background-color: rgba(255, 223, 128, 0.3); /* Warna latar yang menonjolkan teks */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-style: italic; /* Menambahkan gaya miring */
+}
+
+
+#contact textarea {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left; /* Pastikan teks di dalamnya rata kiri */
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Mengatur elemen formulir rata kiri */
+    margin: 0 auto;
+    max-width: 400px; /* Membatasi lebar formulir */
+}
+
+
+
+
+
+
+
+
+
+
+
+#about {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f0e3;
+    color: #4a2c2a;
+}
+
+#contact {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #4a2c2a;
+    color: #f0c674;
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+#contact .contact-info p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+#contact form {
+    margin-top: 20px;
+}
+
+#contact label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1.1em;
+    color: #f0c674;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 15px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact button {
+    background-color: #ffd700;
+    color: #4a2c2a;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact button:hover {
+    background-color: #e6b800;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu-category {
+    margin-bottom: 30px;
+}
+
+.menu-category h3 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #ffe4b5;
+}
+
+
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #4a2c2a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.menu-item h4 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.menu-item p {
+    margin: 5px 0 0;
+    font-size: 1em;
+    color: #f0c674;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #4a2c2a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 120px; 
+    height: 120px; 
+    border-radius: 8px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.menu-item h4 {
+    margin: 0;
+    font-size: 1.4em; 
+    color: #fff;
+}
+
+.menu-item p {
+    margin: 5px 0 0;
+    font-size: 1.1em; 
+    color: #f0c674;
+}
